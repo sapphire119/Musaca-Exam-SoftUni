@@ -1,0 +1,37 @@
+﻿<div class="container-fluid offset-md-3 col-md-6">
+	<h1 class="text-center">Receipt Details</h1>
+	<hr class="bg-musaca hr-2" />
+	@foreach(var order in Model.Orders)
+	{
+		<div class="row">
+			<div class="col-md-8">
+				<h5>@order.Name</h5>
+			</div>
+			<div class="col-md-2">
+				<h5><span>x</span>@order.Quantity</h5>
+			</div>
+			<div class="col-md-2">
+				<h5><span>$</span>@order.Price</h5>
+			</div>
+		</div>
+	}
+	<hr class="bg-musaca hr-2" />
+	<div class="d-flex justify-content-between">
+		<h5>Total</h5>
+		<h5><span>$</span>@Model.TotalPrice</h5>
+	</div>
+	<hr class="bg-musaca hr-2" />
+	<div class="d-flex justify-content-between">
+		<h5>Issued On</h5>
+		<h5>@Model.IssueDate</h5>
+	</div>
+	<div class="d-flex justify-content-between">
+		<h5>Cashier</h5>
+		<h5>@Model.CashierName</h5>
+	</div>
+	<hr class="bg-musaca hr-2" />
+	<div class="d-flex justify-content-between">
+		<h5>Receipt</h5>
+		<h5>@Model.ReceiptId</h5>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+﻿<h1 class="text-center text-musaca">All Receipts</h1>
+<hr class="hr-2 bg-musaca" />
+<table class="table mx-auto table-hover border-musaca table-bordered flex-row-reverse">
+	<thead>
+		<tr class="row">
+			<th class="col-md-5 text-musaca text-center"><strong>Id</strong></th>
+			<th class="col-md-2 text-musaca text-center"><strong>Total</strong></th>
+			<th class="col-md-2 text-musaca text-center"><strong>Issued On</strong></th>
+			<th class="col-md-2 text-musaca text-center"><strong>Cashier</strong></th>
+			<th class="col-md-1 text-musaca text-center"><strong>Actions</strong></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var receipt in Model)
+		{
+		<tr class="row">
+			
+			<td class="col-md-5 text-center"><strong>@receipt.Id</strong></td>
+			<td class="col-md-2 text-center"><strong><span>$</span>@receipt.Total</strong></td>
+			<td class="col-md-2 text-center"><strong>@receipt.IssueDate</strong></td>
+			<td class="col-md-2 text-center"><strong>@receipt.Cashier</strong></td>
+			<td class="col-md-1 text-center">
+				<div class="button-holder d-flex justify-content-between">
+					<a href="/receipts/details?receiptId=@receipt.Id" class="btn bg-musaca text-white">Details</a>
+				</div>
+			</td>
+		</tr>
+		}
+</table>

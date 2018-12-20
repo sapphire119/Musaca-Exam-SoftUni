@@ -1,0 +1,34 @@
+﻿<form class="mx-auto w-50" method="post" action="/products/create">
+	<h1 class="text-center text-musaca">Create Product</h1>
+	<hr class="bg-musaca hr-2" />
+	<div class="form-group">
+		<label for="name" class="text-musaca text-center" style="display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: inherit;"><strong>Name</strong></label>
+		<input type="text" class="form-control" id="name" placeholder="Name..." name="name">
+	</div>
+	<div class="form-group">
+		<label for="imageUrl" class="text-musaca text-center" style="display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: inherit;"><strong>Picture</strong></label>
+		<input type="text" class="form-control" id="imageUrl" placeholder="Picture..." name="imageUrl">
+	</div>
+	<div class="row">
+		<div class="col text-musaca text-center">
+			<strong>Price</strong>
+		</div>
+		<div class="col text-musaca text-center">
+			<strong>Barcode</strong>
+		</div>
+	</div>
+	<div class="form-group d-flex">
+			<input type="text" class="form-control w-50 mr-5 col" id="price" placeholder="Price..." name="price">
+			<input type="text" class="form-control w-50 ml-0 col" id="barcode" placeholder="Barcode..." name="barcode">
+	</div>
+	<hr class="bg-musaca hr-2" />
+	<div class="button-holder mt-4 d-flex justify-content-center">
+		<button type="submit" class="btn bg-musaca text-white">Create</button>
+	</div>
+</form>

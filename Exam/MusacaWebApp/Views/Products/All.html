@@ -1,0 +1,60 @@
+﻿<div class="row">
+	@if(Model != null)
+	{
+		{ var counter = 0;}
+		@for(var i = 0; i < Model.Length; i++)
+		{
+			{ var currentProduct = Model[i]; }
+
+			@if(counter % 3 == 0 && i > 0)
+			{
+				</div>
+				{ counter = 0; }
+				<div class="row">
+			}
+
+			<div class="col mt-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-3">
+							@if(currentProduct.ImageUrl == string.Empty)
+							{
+								<img src="https://lh3.googleusercontent.com/oleiR91uvKPNhIaPUAW2KpvSfAoV-c_uu1ihfrvGIrqpB-W8KGx2Gwfv153MwKMZVBF9=s85" alt="Dropbox" height="50" width="50" />
+							}
+							@else
+							{
+								<img src="@currentProduct.ImageUrl" alt="Dropbox" height="50" width="50" />
+							}
+						</div>
+						<div class="col-3">
+							<div>Name:</div>
+							<div>Price:</div>
+							<div>Barcode:</div>
+						</div>
+						<div class="col-6">
+							<div>@currentProduct.Name</div>
+							<div><span>$</span>@currentProduct.Price</div>
+							<div>@currentProduct.Barcode</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{ counter++; }
+
+			@if(i == Model.Count() - 1)
+			{
+				{ var timesToPrint = 3 - counter; }
+
+				@for(int j = 0; j < timesToPrint; j++)
+				{
+					<div class="col mt-2">
+						<div class="container text-white">
+
+						</div>
+					</div>
+				}
+			}
+		}
+	}
+</div>
